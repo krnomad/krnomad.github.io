@@ -133,6 +133,15 @@ pin: true
       }
     );
 
+    // Find the index of the first occurrence of "undefined"
+    const undefinedIndex = edited_md.indexOf("undefined");
+
+    // Check if "undefined" exists and remove it
+    if (undefinedIndex > -1) {
+      // Remove "undefined" from the string
+      edited_md = edited_md.substring(0, undefinedIndex) + edited_md.substring(undefinedIndex + 9);
+    }
+
     //writing to file
     fs.writeFile(path.join(root, ftitle), fm + edited_md, (err) => {
       if (err) {
