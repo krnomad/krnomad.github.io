@@ -16,15 +16,10 @@ ubuntu20.04
 
 python3.9
 
-<details>
-  <summary>ubuntu20.04에서 python3.9 설치</summary>
+
+(참고) ubuntu20.04에서 python3.9 설치: [https://codechacha.com/ko/ubuntu-install-python39/](https://codechacha.com/ko/ubuntu-install-python39/)
 
 
-[https://codechacha.com/ko/ubuntu-install-python39/](https://codechacha.com/ko/ubuntu-install-python39/)
-
-
-
-  </details>
 # Vagrant 로 VM 구축
 
 
@@ -139,8 +134,8 @@ cp -rpf inventory/sample/ inventory/mycluster
 ```
 {% endraw %}
 
-<details>
-  <summary>inventory.ini 변경</summary>
+
+### inventory.ini 변경
 
 
 {% raw %}
@@ -192,8 +187,6 @@ calico_rr
 {% endraw %}
 
 
-
-  </details>
 ### group_vars 변경 (optional)
 
 
