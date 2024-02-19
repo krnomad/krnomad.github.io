@@ -10,14 +10,32 @@ pin: true
 
 ## 구축 환경
 
+- ubuntu20.04
+- python3.9: ansible 8.5를 위해 필수로 설치
 
-ubuntu20.04
+### ubuntu20.04에서 python3.9 설치
 
 
-python3.9
+[https://codechacha.com/ko/ubuntu-install-python39/](https://codechacha.com/ko/ubuntu-install-python39/)
 
 
-(참고) ubuntu20.04에서 python3.9 설치: [https://codechacha.com/ko/ubuntu-install-python39/](https://codechacha.com/ko/ubuntu-install-python39/)
+### Ubuntu에서 virtualbox 설치
+
+
+{% raw %}
+```bash
+wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | sudo gpg --yes --output /usr/share/keyrings/oracle-virtualbox-2016.gpg --dearmor
+sudo vim /etc/apt/sources.list/virtualbox.list
+# 아래 추가
+# deb [arch=amd64 signed-by=/usr/share/keyrings/oracle-virtualbox-2016.gpg] https://download.virtualbox.org/virtualbox/debian focal contrib 
+sudo apt-get update
+sudo apt-get install virtualbox-6.1
+
+# disable secure boot in Bios setting
+# check if secureBoot is enabled
+mokutil --sb-state
+```
+{% endraw %}
 
 
 # Vagrant 로 VM 구축
@@ -113,6 +131,19 @@ ssh-copy-id vagrant@192.168.56.103
 
 
 # Kubespray로 k8s cluster 구축
+
+
+### Git
+
+
+[https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray)
+
+
+{% raw %}
+```bash
+git clone https://github.com/kubernetes-sigs/kubespray.git
+```
+{% endraw %}
 
 
 ### package 설치
