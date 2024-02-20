@@ -237,7 +237,7 @@ audit관련: kubernetes_audit
 ```bash
 ansible all -m ping -i inventory/mycluster/inventory.ini # 실행 전 test
 
-ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b
+ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -become --become-user=root -vvv 
 ```
 {% endraw %}
 
