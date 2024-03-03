@@ -4,5 +4,11 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
+> 환영 합니다! 👋
+
+안녕하세요! 이 블로그는 DevOps와 관련된 다양한 주제를 다루는 공간입니다. 여기에서는 코드, 클라우드, 자동화, 배포, 인프라 관리 등 다양한 주제를 다루며, DevOps 커뮤니티와 지식 공유를 지지합니다.
+
+이 블로그는 개발자, 운영자, 시스템 관리자, 클라우드 엔지니어, 그리고 모든 DevOps 업무에 관심 있는 분들을 위해 만들어졌습니다. 함께 성장하고 배우며 혁신적인 DevOps 문화를 만들어 나가는 것을 목표로 하고 있습니다.
+
+여러분의 의견과 질문은 언제나 환영합니다. 함께 DevOps 세계를 탐험해 봅시다! 🚀
 {: .prompt-tip }
