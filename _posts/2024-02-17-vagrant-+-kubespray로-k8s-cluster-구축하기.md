@@ -242,6 +242,40 @@ ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -become --beco
 {% endraw %}
 
 
+## kubectl alias 설정
+
+
+### for zsh
+
+
+[https://kubernetes.io/ko/docs/tasks/tools/included/optional-kubectl-configs-zsh/](https://kubernetes.io/ko/docs/tasks/tools/included/optional-kubectl-configs-zsh/)
+
+
+{% raw %}
+```bash
+source <(kubectl completion zsh)
+echo 'alias k=kubectl' >>~/.zshrc
+echo 'complete -o default -F __start_kubectl k' >>~/.zshrc
+```
+{% endraw %}
+
+
+### for bash
+
+
+[https://kubernetes.io/ko/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/](https://kubernetes.io/ko/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/)
+
+
+{% raw %}
+```bash
+apt-get install bash-completion
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+echo 'alias k=kubectl' >>~/.bashrc
+echo 'complete -o default -F __start_kubectl k' >>~/.bashrc
+```
+{% endraw %}
+
+
 ## 최종 확인
 
 
