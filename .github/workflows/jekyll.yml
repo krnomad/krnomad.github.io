@@ -1,13 +1,15 @@
 name: "Build and Deploy"
+
 on:
-  repository_dispatch:
-    types: [RUN_WORKFLOW_DISPATCH]
+  workflow_dispatch:       # 수동 실행을 위한 트리거
   schedule:
-    - cron: '30 5 * * *'
+    - cron: '30 5 * * *'   # 매일 오전 5시 30분 UTC (한국시간 오후 2시 30분)
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -18,6 +20,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
