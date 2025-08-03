@@ -3,7 +3,6 @@ on:
   repository_dispatch:
     types: [RUN_WORKFLOW_DISPATCH]
   schedule:
-    # 매일 05:30 UTC에 실행 (KST 오전 14:30)
     - cron: '30 5 * * *'
 permissions:
   contents: write
@@ -16,6 +15,9 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -58,8 +60,6 @@ jobs:
           commit_user_email: actions@github.com
           commit_author: importer-bot 🤖 <actions@github.com>
 
-      # --- GitHub Pages 공식 배포 단계 ---
-      
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
