@@ -1,0 +1,25 @@
+Run actions/upload-pages-artifact@v3
+Run echo ::group::Archive artifact
+Archive artifact
+Run actions/upload-artifact@v4
+With the provided path, there will be 1 file uploaded
+Artifact name is valid!
+Root directory input is valid!
+Beginning upload of artifact content to blob storage
+Uploaded bytes 7078704
+Finished uploading artifact content to blob storage!
+SHA256 digest of uploaded artifact zip is f432d80ef52746f10b617a709bf72046ad8a3032c09b70b3b014e282f56ff431
+Finalizing artifact upload
+Artifact github-pages.zip successfully finalized. Artifact ID 3675264371
+Artifact github-pages has been successfully uploaded! Final size is 7078704 bytes. Artifact ID is 3675264371
+Artifact download URL: https://github.com/krnomad/krnomad.github.io/actions/runs/16701676066/artifacts/3675264371
+Run actions/deploy-pages@v3
+Artifact exchange URL: https://pipelinesghubeus8.actions.githubusercontent.com/QG9uY0HuuUMBh5jXBUoQbRivwl3jU8mTQnecYfqQGb7e4PLW6R/_apis/pipelines/workflows/16701676066/artifacts?api-version=6.0-preview
+Error: Getting signed artifact URL failed
+Error: HttpError: Cannot find any run with github.run_id 16701676066.
+    at processRuntimeResponse (/home/runner/work/_actions/actions/deploy-pages/v3/src/internal/api-client.js:48:1)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at getSignedArtifactMetadata (/home/runner/work/_actions/actions/deploy-pages/v3/src/internal/api-client.js:82:1)
+    at Deployment.create (/home/runner/work/_actions/actions/deploy-pages/v3/src/internal/deployment.js:68:1)
+    at main (/home/runner/work/_actions/actions/deploy-pages/v3/src/index.js:30:1)
+Error: Error: Failed to create deployment (status: 404) with build version 22b9612260e4bdbf502062983aefb4c2b35c35d9. Ensure GitHub Pages has been enabled: https://github.com/krnomad/krnomad.github.io/settings/pages

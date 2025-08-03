@@ -1,9 +1,12 @@
 name: "Build and Deploy"
 on:
-  repository_dispatch:
-    types: [RUN_WORKFLOW_DISPATCH]
+  workflow_dispatch:
   schedule:
     - cron: '30 5 * * *'
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [RUN_WORKFLOW_DISPATCH]
 permissions:
   contents: write
   pages: write
