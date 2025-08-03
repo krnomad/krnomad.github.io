@@ -2,13 +2,13 @@ name: "Build and Deploy"
 on:
   repository_dispatch:
     types: [RUN_WORKFLOW_DISPATCH]
-
+  schedule:
+    # 매일 05:30 UTC에 실행
+    - cron: '30 5 * * *'
 permissions:
   contents: write
   pages: write
   id-token: write
-
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -82,6 +82,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
