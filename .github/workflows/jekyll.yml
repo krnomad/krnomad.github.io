@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [RUN_WORKFLOW_DISPATCH]
   schedule:
-    # 매일 05:30 UTC에 실행
+    # 매일 05:30 UTC에 실행 (KST 오전 14:30)
     - cron: '30 5 * * *'
 permissions:
   contents: write
@@ -21,8 +21,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
-          # submodules: true
-          # If using the 'assets' git submodule from Chirpy Starter, uncomment above
 
       - name: Clean Directory
         run: |
@@ -59,7 +57,9 @@ jobs:
           commit_user_name: importer-bot 🤖
           commit_user_email: actions@github.com
           commit_author: importer-bot 🤖 <actions@github.com>
-          
+
+      # --- GitHub Pages 공식 배포 단계 ---
+      
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
@@ -83,5 +83,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
