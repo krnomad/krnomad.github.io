@@ -68,7 +68,7 @@ jobs:
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages@v3 # v3 버전으로 업데이트
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -82,7 +82,7 @@ jobs:
           JEKYLL_ENV: "production"
 
       - name: Upload site artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3 # v3 버전으로 업데이트
         with:
           path: "_site${{ steps.pages.outputs.base_path }}"
 
