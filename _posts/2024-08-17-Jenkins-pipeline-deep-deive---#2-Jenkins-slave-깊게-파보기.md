@@ -200,7 +200,7 @@ jwkang2@5448ef6a9075:~$
 {% endraw %}
 
 
-slave node에는 미리 agent.jar를 미리 다운시켜 놔야하는데, 참고로 Jenkins controller가 배포될 때 아래 주소에 agent.jar도 함께 배포된다.[http://${jenkins접속IP}:8080/jnlpJars/agent.jar](/)
+slave node에는 미리 agent.jar를 미리 다운시켜 놔야하는데, 참고로 Jenkins controller가 배포될 때 아래 주소에 agent.jar도 함께 배포된다.http://${jenkins접속IP}:8080/jnlpJars/agent.jar
 
 
 Jenkins contoller가 성공적으로 아래 명령을 실행하게 되면, Jenkins는 아 channel을 통해 remote agent에 명령들을 실행시킬 수 있다.
