@@ -3,11 +3,11 @@ layout: post
 date: 2025-08-31
 title: "Kubernetes PersistentVolume 상태"
 tags: [k8s, persistentvolume, storage]
-categories: [kubernetes, ]
-description: "PV가 Released 상태가 되는 이유와 Retain 정책, 재사용 절차를 운영 관점에서 정리한 글."
+categories: [kubernetes]
+description: "PV가 Released 상태가 되는 이유와 Retain 정책, 재사용 절차를 운영 관점에서 정리한 글입니다."
 image:
   path: /assets/img/covers/pv-retain.svg
-  alt: PersistentVolume retain policy concept cover
+  alt: PersistentVolume retain policy cover
 pin: true
 ---
 

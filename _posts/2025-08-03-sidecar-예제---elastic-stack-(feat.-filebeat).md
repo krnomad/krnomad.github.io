@@ -2,9 +2,12 @@
 layout: post
 date: 2025-08-03
 title: "sidecar 예제 - elastic stack (feat. filebeat)"
-categories: [kubernetes, DevOps]
 tags: [sidecar, filebeat, elasticsearch, observability]
-description: "Filebeat 사이드카로 애플리케이션 로그를 Elasticsearch로 보내는 Kubernetes 예제와 메타데이터 확장 방법."
+categories: [kubernetes, DevOps]
+description: "Filebeat 사이드카로 애플리케이션 로그를 Elasticsearch로 보내고 메타데이터를 확장하는 흐름을 예제로 정리한 글입니다."
+image:
+  path: /assets/img/covers/sidecar-filebeat.svg
+  alt: Sidecar logging with Filebeat cover
 ---
 
 ### Filebeat 사이드카 컨테이너 예제

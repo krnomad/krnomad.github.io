@@ -2,16 +2,16 @@
 layout: post
 date: 2025-08-19
 title: "Kubernetes Ingress Class와 Ingress Controller, 그리고 트래픽 동작 원리"
+tags: [k8s, ingress]
 categories: [kubernetes, DevOps]
-tags: [k8s, ingress, ]
-description: "Ingress Class, Ingress Controller, 그리고 외부 요청이 Service와 Pod까지 전달되는 흐름을 한 번에 정리한 글."
+description: "Ingress Class, Ingress Controller, 그리고 외부 요청이 Service와 Pod까지 전달되는 흐름을 한 번에 정리한 글입니다."
 image:
   path: /assets/img/covers/ingress-flow.svg
-  alt: Ingress traffic flow concept cover
+  alt: Ingress traffic flow cover
 pin: true
 ---
 
-Kubernetes에서 외부 트래픽을 클러스터 내부 서비스로 라우팅하는 핵심 리소스인 **Ingress**. 이를 제대로 이해하기 위해서는 **Ingress Controller**와 **Ingress Class**의 역할을 명확히 알아야 합니다. 이 포스팅에서는 이 두 가지 개념을 기술적으로 깊이 있게 살펴보고, 실제 트래픽이 어떻게 흐르는지 상세히 설명합니다.
+Kubernetes에서 외부 트래픽을 클러스터 내부 서비스로 라우팅하는 핵심 리소스인 **Ingress**. 이를 제대로 이해하기 위해서는 **Ingress Controller**와 **Ingress Class**의 역할을 명확히 알아야 합니다. 이 글에서는 이 두 가지 개념을 기술적으로 깊이 있게 살펴보고, 실제 트래픽이 어떻게 흐르는지 상세히 설명합니다.
 
 ---
 

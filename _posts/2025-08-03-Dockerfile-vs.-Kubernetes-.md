@@ -2,9 +2,12 @@
 layout: post
 date: 2025-08-03
 title: "Dockerfile vs. Kubernetes "
-categories: [kubernetes, DevOps]
 tags: [dockerfile, kubernetes, containers]
-description: "Dockerfile ENTRYPOINT/CMD와 Kubernetes command/args가 어떻게 덮어써지는지 실제 예제로 비교한 메모."
+categories: [kubernetes, DevOps]
+description: "Dockerfile ENTRYPOINT·CMD와 Kubernetes command·args가 어떻게 겹치고 덮어써지는지 예제로 비교한 글입니다."
+image:
+  path: /assets/img/covers/dockerfile-k8s.svg
+  alt: ENTRYPOINT versus command args cover
 ---
 
 # Dockerfile vs. Kubernetes `command` / `args` (핵심 비교)

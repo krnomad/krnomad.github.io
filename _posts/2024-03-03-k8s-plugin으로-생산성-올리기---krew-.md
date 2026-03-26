@@ -1,15 +1,18 @@
 ---
 layout: post
 date: 2024-03-03
-title: "k8s plugin으로 생산성 올리기 - krew "
-tags: [krew, kubetail, ]
-categories: [DevOps, K8S, kubernetes, ]
+title: "k8s plugin으로 생산성 올리기 - krew"
+tags: [krew, kubetail, kubectl]
+categories: [DevOps, kubernetes]
 description: "kubectl 생산성을 올려주는 krew와 ctx, ns, konfig, kubetail 같은 실전 플러그인을 빠르게 훑는 메모입니다."
+image:
+  path: /assets/img/covers/krew-plugins.svg
+  alt: kubectl productivity plugins cover
 ---
 
-krew는 kubectl에서 사용할 수 있는 유요한 plugin을 설치할 수 있게 도와준다.
+krew는 kubectl에서 사용할 수 있는 유용한 plugin을 설치할 수 있게 도와준다.
 
-`kubectrl krew install $pugin_name`과 같은 방법으로 plugin을 설치할 수 있다. package manager와 유사하게 다음과 같은 명령어들이 지원된다.
+`kubectrl krew install $plugin_name`과 같은 방법으로 plugin을 설치할 수 있다. package manager와 유사하게 다음과 같은 명령어들이 지원된다.
 
 - kubectl krew list
 - kubectl krew search
@@ -50,7 +53,7 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 ## ctx
 
-`.kube/config`에 kubectl이 사용하는 context들이 저장된다. 여러 k8s cluster를 관리하게 되면 이 config파일을 대체하거나 혹은 config에 context를 추가하는 방식으로 관리한다. 이 경우 context르 전환하는 것이 불편한데, ctx plugin은 이를 해결해준다. 
+`.kube/config`에 kubectl이 사용하는 context들이 저장된다. 여러 k8s cluster를 관리하게 되면 이 config파일을 대체하거나 혹은 config에 context를 추가하는 방식으로 관리한다. 이 경우 context를 전환하는 것이 불편한데, ctx plugin은 이를 해결해준다. 
 
 {% raw %}
 ```bash
@@ -76,12 +79,12 @@ kubectl ns
 
 ## konfig 
 
-`~/.kube/config` 에 여러 plugin이 존재할 때 이를 병합을 도와주는 plugin이다. 
+`~/.kube/config` 에 여러 config가 존재할 때 이를 병합하도록 도와주는 plugin이다. 
 
 {% raw %}
 ```bash
 kubectl krew install konfig
-kubectl konfig import ${file} # 이후 confg를 붙여넣기
+kubectl konfig import ${file} # 이후 config를 붙여넣기
 ```
 {% endraw %}
 

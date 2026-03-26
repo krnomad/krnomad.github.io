@@ -2,9 +2,12 @@
 layout: post
 date: 2024-02-17
 title: "vagrant + kubespray로 k8s cluster 구축하기"
-tags: [k8s, vagrant, kubespray, ]
-categories: [kubernetes, ]
-description: "Vagrant와 Kubespray로 로컬 실습용 Kubernetes 클러스터를 올리는 과정을 VM 준비부터 inventory 설정까지 정리한 글입니다."
+tags: [k8s, vagrant, kubespray]
+categories: [kubernetes]
+description: "Vagrant와 Kubespray로 로컬 실습용 Kubernetes 클러스터를 준비하는 과정을 VM 생성부터 inventory 설정까지 정리한 글입니다."
+image:
+  path: /assets/img/covers/vagrant-kubespray.svg
+  alt: Vagrant and Kubespray lab cluster cover
 ---
 
 ## 구축 환경
@@ -44,7 +47,7 @@ sudo apt install ./vagrant_2.4.1-1_amd64.deb
 ```
 {% endraw %}
 
-### `Vagranffile` 작성
+### `Vagrantfile` 작성
 
 ip는 virtualbox의 host전용 어뎁터 subnet 기준으로 변경 필요
 

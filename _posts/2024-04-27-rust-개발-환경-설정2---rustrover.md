@@ -2,9 +2,12 @@
 layout: post
 date: 2024-04-27
 title: "rust 개발 환경 설정2 - rustrover"
-tags: [rust, ]
-categories: [rust, ]
-description: "VS Code와 RustRover에서 cargo clippy 중심으로 Rust 검사 설정을 맞추는 간단한 메모."
+tags: [rust, rustrover, vscode]
+categories: [rust]
+description: "VS Code와 RustRover에서 cargo clippy 중심으로 Rust 검사 설정을 맞추는 간단한 메모입니다."
+image:
+  path: /assets/img/covers/rust-rustrover.svg
+  alt: RustRover and editor tooling cover
 hidden: true
 sitemap: false
 ---

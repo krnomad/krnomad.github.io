@@ -2,9 +2,12 @@
 layout: post
 date: 2024-02-18
 title: "MetalLB로 LoadBalancer 구축하기"
-tags: [MetalLB, LoadBalancer, k8s, ]
-categories: [kubernetes, ]
-description: "온프레미스 클러스터에서 MetalLB로 외부 IP 대역을 할당하고 최신 설정 방식까지 이어서 보는 빠른 메모입니다."
+tags: [metallb, loadbalancer, k8s]
+categories: [kubernetes]
+description: "온프레미스 Kubernetes 환경에서 MetalLB로 외부 IP 대역을 할당하고 최신 설정 방식까지 이어서 보는 빠른 메모입니다."
+image:
+  path: /assets/img/covers/metallb-lb.svg
+  alt: MetalLB external IP allocation cover
 ---
 
 ### 환경
@@ -28,7 +31,7 @@ graph TD
 ```
 {% endraw %}
 
-LoadBalanacer에 사용할 ip 대역을 192.168.56.150~192.168.56.180으로 설정하려고 한다.
+LoadBalancer에 사용할 ip 대역을 192.168.56.150~192.168.56.180으로 설정하려고 한다.
 
 1. LoadBalancer에 할당할 외부에서 접속 가능한 IP 대역 지정하기
 2. 로드밸런서 용도로 사용할 IP 대역 지정. 외부에서 접속이 가능한대역으로 할당한다.

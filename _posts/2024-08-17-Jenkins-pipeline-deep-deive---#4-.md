@@ -1,10 +1,13 @@
 ---
 layout: post
 date: 2024-08-17
-title: "Jenkins pipeline deep deive - #4 "
-tags: [Jenkins, ]
-categories: [Jenkins, DevOps, ]
-description: "기본적으로 Jenkins DSL에서 로그를 출력할 때는 sh, echo, println을 많이 사용한다. 이 3개의 함수는 DSL에 정의된 함수로 이중 println은 DSL에도 정의돼 있지만, System.out.println으로 사전에 정의된 함수이기도 하다."
+title: "Jenkins Pipeline Deep Dive - #4 sh, echo, println 로그 차이"
+tags: [Jenkins, pipeline, logging]
+categories: [Jenkins, DevOps]
+description: "Jenkins Pipeline에서 sh, echo, println이 서로 다른 위치에 로그를 남기는 이유를 실행 구조와 함께 정리한 글입니다."
+image:
+  path: /assets/img/covers/jenkins-logging.svg
+  alt: Jenkins pipeline logging cover
 ---
 
 기본적으로 Jenkins DSL에서 로그를 출력할 때는 `sh`, `echo`, `println`을 많이 사용한다. 이 3개의 함수는 DSL에 정의된 함수로 이중 println은 DSL에도 정의돼 있지만, System.out.println으로 사전에 정의된 함수이기도 하다.
@@ -48,7 +51,7 @@ getListener().getLogger().println
 
 이를 통해 화면(tty)대신 file로 출력하게 함으로서 Jenkins에서는 해당 file을 읽어 client에 전달해 web browser에서 log가 출력되된다.
 
-쉽게 이해해 보면, jenkins groovy DSL에서 로그를 출력하게 하기 위해서 **java의 println을 그대로 사용하지 않고** DSL에서 **새롭게 정의된 println**을 사용한다.
+쉽게 이해해 보면, jenkins groovy DSL에서 로그를 출력하게 하기 위해 **java의 println을 그대로 사용하지 않고** DSL에서 **새롭게 정의된 println**을 사용한다.
 
 # Log가 출력되지 않는예
 
@@ -77,7 +80,7 @@ Finished: SUCCESS
 ```
 {% endraw %}
 
-그러면 `hello world`라는 String은 어디에 출력됐을까?기본적으로 pipeline에 작성되는 모든 groovy script는 Jenkins controller가 동작하는 환경 위해서 실행되기 때문에, 해당 log는 jenkins contoller application의 log에 출력된다.아래는 위 코드를 실행 시켰을 때 jenkins service의 실제 로그이다.
+그러면 `hello world`라는 String은 어디에 출력됐을까?기본적으로 pipeline에 작성되는 모든 groovy script는 Jenkins controller가 동작하는 환경 위에서 실행되기 때문에, 해당 log는 jenkins controller application의 log에 출력된다.아래는 위 코드를 실행 시켰을 때 Jenkins service의 실제 로그이다.
 
 {% raw %}
 ```text
@@ -136,9 +139,9 @@ node {
 
 **위 실행에서 Jenkins console로그에는 1만 출력된다.**
 
-Jenkins pipeline은 DSL(Domain specific Language)를 이용해 Jenkins 환경에서 실행할 수 있는 특정 함수를 사용가능하게 만드는데, 위 예에서 node, stage라는 예약어는 일반 groovy에 존재하지 않는 Jenkins DSL이다.이러한 이유로 pipelin code가 jenkins pipeline에서 실행 가능하게 하기 위해서 일반 groovy code로 변경이 필요하고 이렇게 일반 groovy code로 변경하는 과정을 CPS transform이라고 한다.
+Jenkins pipeline은 DSL(Domain specific language)를 이용해 Jenkins 환경에서 실행할 수 있는 특정 함수를 사용 가능하게 만드는데, 위 예에서 node, stage라는 예약어는 일반 groovy에 존재하지 않는 Jenkins DSL이다.이러한 이유로 pipeline code가 jenkins pipeline에서 실행 가능하게 하기 위해 일반 groovy code로 변경이 필요하고 이렇게 일반 groovy code로 변경하는 과정을 CPS transform이라고 한다.
 
-Pipeline 코드는 CPS변경에 의해 WorkflowScript라고 하는 클래스로 변경되고, Jenkins contoller는 WokrflowRun이라는 대리자를 통해 WorkflowScript를 실행한다.
+Pipeline 코드는 CPS변경에 의해 WorkflowScript라고 하는 클래스로 변경되고, Jenkins controller는 WokrflowRun이라는 대리자를 통해 WorkflowScript를 실행한다.
 
 위 예에서 `log(String s)`는 WorkflowScript 내부 method로 이해하면 되고, WorkflowScript가 가지는 println함수의 출력 스트림은 파일로 재정의 돼 있으므로 console창에 `1`이라는 string 출력이 가능해 진다.
 
@@ -237,4 +240,3 @@ def test = new TestClass()
 test.hello()
 ```
 {% endraw %}
-

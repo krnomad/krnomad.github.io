@@ -2,9 +2,12 @@
 layout: post
 date: 2024-03-06
 title: "rust 개발 환경 설정1 - window에서 rust  개발하기"
-tags: [rust, ]
-categories: [rust, ]
-description: "Windows에서 Rust 개발 환경을 준비할 때 필요한 설치 흐름을 짧게 정리한 메모."
+tags: [rust, windows]
+categories: [rust]
+description: "Windows 환경에서 Rust 툴체인과 VS Code 기반 개발 준비를 시작할 때 확인할 설치 메모입니다."
+image:
+  path: /assets/img/covers/rust-windows.svg
+  alt: Rust setup on Windows cover
 hidden: true
 sitemap: false
 ---

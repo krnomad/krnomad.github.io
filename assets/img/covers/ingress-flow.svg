@@ -1,30 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Ingress Flow</title>
-  <desc id="desc">Blue and teal cover showing ingress traffic flow.</desc>
+  <title id="title">Kubernetes Ingress Class와 Ingress Controller, 그리고 트래픽 동작 원리</title>
+  <desc id="desc">Ingress traffic flow</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#082f49"/>
-      <stop offset="100%" stop-color="#164e63"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="1040" cy="100" r="180" fill="#67e8f9" opacity="0.12"/>
-  <rect x="110" y="220" width="170" height="110" rx="28" fill="#cffafe" opacity="0.96"/>
-  <rect x="390" y="220" width="220" height="110" rx="28" fill="#a5f3fc" opacity="0.94"/>
-  <rect x="720" y="170" width="170" height="88" rx="24" fill="#67e8f9" opacity="0.92"/>
-  <rect x="720" y="290" width="170" height="88" rx="24" fill="#22d3ee" opacity="0.92"/>
-  <rect x="980" y="170" width="120" height="88" rx="24" fill="#ecfeff" opacity="0.96"/>
-  <rect x="980" y="290" width="120" height="88" rx="24" fill="#ecfeff" opacity="0.96"/>
-  <path d="M280 275h85" stroke="#e0f2fe" stroke-width="12" stroke-linecap="round"/>
-  <path d="M610 275h75" stroke="#e0f2fe" stroke-width="12" stroke-linecap="round"/>
-  <path d="M890 214h55" stroke="#e0f2fe" stroke-width="12" stroke-linecap="round"/>
-  <path d="M890 334h55" stroke="#e0f2fe" stroke-width="12" stroke-linecap="round"/>
-  <text x="133" y="286" fill="#0f172a" font-family="Arial, sans-serif" font-size="26" font-weight="700">User</text>
-  <text x="438" y="286" fill="#083344" font-family="Arial, sans-serif" font-size="28" font-weight="700">Ingress Controller</text>
-  <text x="745" y="223" fill="#083344" font-family="Arial, sans-serif" font-size="24" font-weight="700">Service A</text>
-  <text x="745" y="343" fill="#083344" font-family="Arial, sans-serif" font-size="24" font-weight="700">Service B</text>
-  <text x="1004" y="223" fill="#164e63" font-family="Arial, sans-serif" font-size="24" font-weight="700">Pod</text>
-  <text x="1004" y="343" fill="#164e63" font-family="Arial, sans-serif" font-size="24" font-weight="700">Pod</text>
-  <text x="110" y="468" fill="#f0fdfa" font-family="Arial, sans-serif" font-size="62" font-weight="700">Ingress Class &amp; Controller</text>
-  <text x="110" y="528" fill="#bae6fd" font-family="Arial, sans-serif" font-size="31">How traffic moves from DNS to Service and Pod</text>
+  <circle cx="1050" cy="110" r="170" fill="#e0f2fe" opacity="0.1"/>
+  <rect x="96" y="108" width="316" height="168" rx="32" fill="#ffffff" opacity="0.12"/>
+  <rect x="132" y="146" width="188" height="18" rx="9" fill="#e0f2fe" opacity="0.85"/>
+  <rect x="132" y="186" width="236" height="18" rx="9" fill="#e0f2fe" opacity="0.45"/>
+  <rect x="132" y="226" width="152" height="18" rx="9" fill="#e0f2fe" opacity="0.3"/>
+  <path d="M448 192h120" stroke="#e0f2fe" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+  <path d="M548 152l48 40-48 40" fill="none" stroke="#e0f2fe" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <rect x="650" y="118" width="360" height="174" rx="34" fill="#000000" opacity="0.15"/>
+  <text x="692" y="188" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="34" font-weight="700">Ingress traffic flow</text>
+  <text x="96" y="350" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="28">krnomad.github.io</text>
+  <text x="96" y="430" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="54" font-weight="700">Kubernetes Ingress Class와 Ingress </text><text x="96" y="488" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="54" font-weight="700">Controller, 그리고 트래픽 동작 원리</text>
 </svg>

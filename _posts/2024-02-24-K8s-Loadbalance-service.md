@@ -1,19 +1,22 @@
 ---
 layout: post
 date: 2024-02-24
-title: "K8s Loadbalance service"
-tags: [k8s, LoadBalancer, ]
-categories: [kubernetes, ]
-description: "MetalLB가 할당한 External IP가 Pod까지 어떻게 라우팅되는지 짧게 캡처한 메모."
+title: "K8s LoadBalancer Service 라우팅 메모"
+tags: [k8s, loadbalancer]
+categories: [kubernetes]
+description: "MetalLB가 할당한 External IP가 Pod까지 어떻게 전달되는지 ipvsadm 기준으로 짧게 확인하는 캡처 메모입니다."
+image:
+  path: /assets/img/covers/loadbalance-service.svg
+  alt: LoadBalancer service routing cover
 hidden: true
 sitemap: false
 ---
 
-`ipvsadm -Ln`명령을 통해 Loadbalance에 할당된 IP가 pod까지 전달되는 라우팅 정보를 확인할 수 있다.
+`ipvsadm -Ln`명령을 통해 LoadBalancer에 할당된 IP가 pod까지 전달되는 라우팅 정보를 확인할 수 있다.
 
 Layer 4와 유사 (cf. ingress는 layer7 와 유사)
 
-### Metallb에 Loadbalance service가 추가
+### MetalLB에 LoadBalancer Service가 추가
 
 192.168.56.151이 생성된 것을 확인 
 
@@ -30,4 +33,3 @@ Node에 접속해 `ipvadm -Ln`명령으로 라우팅 정보 확인
 Pod 정보 확인. ExternalIP 192.168.56.151:80이 Pod ip 10.233.96.117.80로 연결되는 것을 확인할 수 있다. Replicas가 여러개라면 192.168.56.151을 통해 여러 pod IP로 라우팅 될 수 있다 (로그밸런싱)
 
 ![3](/assets/img/2024-02-24-K8s-Loadbalance-service.md/3.png)
-

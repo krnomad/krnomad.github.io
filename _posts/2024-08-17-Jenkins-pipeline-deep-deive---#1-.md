@@ -1,16 +1,19 @@
 ---
 layout: post
 date: 2024-08-17
-title: "Jenkins pipeline deep deive - #1 "
-tags: [Jenkins, ]
-categories: [Jenkins, DevOps, ]
-description: "Jenkins pipeline script는 jvm 방언 중 하나인groovy로 작성하지만, 일반적인 프로그래밍 언어와 다르게 CPS tranform이라는 과정을 거쳐 스크립트가 jenkins위에서 동작하게 된다."
+title: "Jenkins Pipeline Deep Dive - #1 CPS와 실행 구조"
+tags: [Jenkins, pipeline, groovy]
+categories: [Jenkins, DevOps]
+description: "Jenkins Pipeline이 왜 일반 Groovy와 다르게 보이는지, CPS 변환과 실행 구조를 중심으로 정리한 글입니다."
+image:
+  path: /assets/img/covers/jenkins-cps.svg
+  alt: Jenkins pipeline CPS internals cover
 ---
 
-Jenkins pipeline script는 jvm 방언 중 하나인groovy로 작성하지만, 일반적인 프로그래밍 언어와 다르게 CPS tranform이라는 과정을 거쳐 스크립트가 jenkins위에서 동작하게 된다. 
+Jenkins pipeline script는 jvm 방언 중 하나인 Groovy로 작성하지만, 일반적인 프로그래밍 언어와 다르게 CPS transform이라는 과정을 거쳐 스크립트가 Jenkins 위에서 동작하게 된다. 
 
 NonCPS annotation을 통해 CPS transform을 배제시킬 수 있는데, 처음 코드를 작성하다 보면 어떤 경우에 NonCPS를 사용하는지 알기가 힘들다.
-NonCPS를 사용하는 큰 이유 중 하나는 성능에 민만한 코드를 실행시킬 경우 이다.
+NonCPS를 사용하는 큰 이유 중 하나는 성능에 민감한 코드를 실행시킬 경우이다.
 
 [https://github.com/cloudbees/groovy-cps/blob/master/lib/src/main/java/com/cloudbees/groovy/cps/NonCPS.java](https://github.com/cloudbees/groovy-cps/blob/master/lib/src/main/java/com/cloudbees/groovy/cps/NonCPS.java)
 

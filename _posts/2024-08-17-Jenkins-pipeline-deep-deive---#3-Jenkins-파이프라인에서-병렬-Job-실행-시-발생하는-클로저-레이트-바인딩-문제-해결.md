@@ -1,15 +1,18 @@
 ---
 layout: post
 date: 2024-08-17
-title: "Jenkins pipeline deep deive - #3 Jenkins 파이프라인에서 병렬 Job 실행 시 발생하는 클로저 레이트 바인딩 문제 해결"
-tags: [Jenkins, ]
-categories: [Jenkins, DevOps, ]
-description: "Jenkins 파이프라인에서 여러 Job을 병렬로 실행할 때, Groovy의 클로저(clousure)와 관련된 레이트 바인딩(late binding) 문제로 인해 의도치 않은 Job이 실행되는 경우가 있습니다."
+title: "Jenkins Pipeline Deep Dive - #3 병렬 Job의 클로저 레이트 바인딩 문제 해결"
+tags: [Jenkins, pipeline, groovy]
+categories: [Jenkins, DevOps]
+description: "Jenkins 병렬 Job 구성에서 Groovy 클로저의 late binding 때문에 생기는 문제와 해결 패턴을 다룬 글입니다."
+image:
+  path: /assets/img/covers/jenkins-closure.svg
+  alt: Jenkins closure late binding cover
 ---
 
 ---
 
-Jenkins 파이프라인에서 여러 Job을 병렬로 실행할 때, Groovy의 클로저(clousure)와 관련된 레이트 바인딩(late binding) 문제로 인해 의도치 않은 Job이 실행되는 경우가 있습니다. 
+Jenkins 파이프라인에서 여러 Job을 병렬로 실행할 때, Groovy의 클로저(closure)와 관련된 레이트 바인딩(late binding) 문제로 인해 의도치 않은 Job이 실행되는 경우가 있습니다. 
 
 ### 문제 상황: 병렬 실행 시 동일한 Job이 실행되는 버그
 
@@ -122,4 +125,3 @@ pipeline {
 ### 결론
 
 Jenkins 파이프라인에서 병렬 작업을 처리할 때, Groovy 클로저의 레이트 바인딩 문제로 인해 의도치 않은 동작이 발생할 수 있습니다. 이 문제를 해결하기 위해서는 클로저 내에서 변수를 사용할 때, 해당 변수를 각 반복에서 고정된 값으로 캡처하여 사용해야 합니다. 이를 통해 병렬 Job이 의도한 대로 올바르게 실행되도록 할 수 있습니다.
-

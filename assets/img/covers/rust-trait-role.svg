@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">8. 트레이트 이해와 Rust에서 trait의 역할</title>
+  <desc id="desc">Rust trait roles</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#431407"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="110" r="170" fill="#fff7ed" opacity="0.1"/>
+  <rect x="96" y="108" width="316" height="168" rx="32" fill="#ffffff" opacity="0.12"/>
+  <rect x="132" y="146" width="188" height="18" rx="9" fill="#fff7ed" opacity="0.85"/>
+  <rect x="132" y="186" width="236" height="18" rx="9" fill="#fff7ed" opacity="0.45"/>
+  <rect x="132" y="226" width="152" height="18" rx="9" fill="#fff7ed" opacity="0.3"/>
+  <path d="M448 192h120" stroke="#fff7ed" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+  <path d="M548 152l48 40-48 40" fill="none" stroke="#fff7ed" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <rect x="650" y="118" width="360" height="174" rx="34" fill="#000000" opacity="0.15"/>
+  <text x="692" y="188" fill="#fff7ed" font-family="Arial, sans-serif" font-size="34" font-weight="700">Rust trait roles</text>
+  <text x="96" y="350" fill="#fff7ed" font-family="Arial, sans-serif" font-size="28">krnomad.github.io</text>
+  <text x="96" y="430" fill="#fff7ed" font-family="Arial, sans-serif" font-size="54" font-weight="700">8. 트레이트 이해와 Rust에서 trait의 역할</text>
+</svg>

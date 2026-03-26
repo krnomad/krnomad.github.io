@@ -2,9 +2,12 @@
 layout: post
 date: 2024-02-20
 title: "Diagram as code"
-tags: [Diagram, ]
-categories: [Diagram, ]
+tags: [diagram]
+categories: [Diagram]
 description: "Mermaid, PlantUML, diagrams 같은 도구를 비교하며 코드로 아키텍처 다이어그램을 관리하는 방법을 모아둔 글입니다."
+image:
+  path: /assets/img/covers/diagram-code.svg
+  alt: Diagram as code tooling cover
 ---
 
 # **Diagram as Code**
