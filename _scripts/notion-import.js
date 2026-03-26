@@ -92,7 +92,6 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
 layout: post
 date: ${date}
 title: "${title}"${fmtags}${fmcats}
-pin: true
 ---
 
 `;
@@ -133,14 +132,13 @@ pin: true
       }
     );
 
-    // Find the index of the first occurrence of "undefined"
-    const undefinedIndex = edited_md.indexOf("undefined");
-
-    // Check if "undefined" exists and remove it
-    if (undefinedIndex > -1) {
-      // Remove "undefined" from the string
-      edited_md = edited_md.substring(0, undefinedIndex) + edited_md.substring(undefinedIndex + 9);
-    }
+    edited_md = edited_md
+      .replace(/undefinedundefined-/g, "- ")
+      .replace(/^undefined-\s*/gm, "- ")
+      .replace(/undefined(?=\d+\.)/g, "")
+      .replace(/^undefined\s*$/gm, "")
+      .replace(/undefined/g, "")
+      .replace(/\n{3,}/g, "\n\n");
 
     //writing to file
     fs.writeFile(path.join(root, ftitle), fm + edited_md, (err) => {

@@ -1,10 +1,11 @@
 <!-- Get 5 last posted/updated posts -->
 
 {% assign MAX_SIZE = 5 %}
+{% assign visible_posts = site.posts | where_exp: 'item', 'item.hidden != true' %}
 
 {% assign all_list = '' | split: '' %}
 
-{% for post in site.posts %}
+{% for post in visible_posts %}
   {% assign datetime = post.last_modified_at | default: post.date %}
 
   {% capture elem %}
@@ -28,7 +29,7 @@
     <ul class="content list-unstyled ps-0 pb-1 ms-1 mt-2">
       {% for item in update_list %}
         {% assign index = item | split: '::' | last | plus: 0 %}
-        {% assign post = site.posts[index] %}
+        {% assign post = visible_posts[index] %}
         {% assign url = post.url | relative_url %}
         <li class="text-truncate lh-lg">
           <a href="{{ url }}">{{ post.title }}</a>

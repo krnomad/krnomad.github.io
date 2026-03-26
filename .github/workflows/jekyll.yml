@@ -3,8 +3,6 @@ on:
   repository_dispatch:
     types: [RUN_WORKFLOW_DISPATCH]
   workflow_dispatch:
-  schedule:
-    - cron: '30 5 * * *'
   push:
     branches: [main]
 permissions:
@@ -27,6 +25,7 @@ jobs:
           fetch-depth: 1
 
       - name: Clean Directory
+        if: github.event_name == 'repository_dispatch'
         run: |
           for file in assets/img/*
           do
@@ -38,20 +37,24 @@ jobs:
           rm -rf _posts/*
 
       - name: Setup Node
+        if: github.event_name == 'repository_dispatch'
         uses: actions/setup-node@v3
         with:
           node-version: "17"
 
       - name: Install dependencies
+        if: github.event_name == 'repository_dispatch'
         run: npm install
 
       - name: Run Notion Importer
+        if: github.event_name == 'repository_dispatch'
         run: node _scripts/notion-import.js
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           DATABASE_ID: ${{ secrets.DATABASE_ID }}
 
       - name: Auto-commit changes
+        if: github.event_name == 'repository_dispatch'
         uses: stefanzweifel/git-auto-commit-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -63,25 +66,30 @@ jobs:
           commit_author: importer-bot 🤖 <actions@github.com>
 
       - name: Setup Pages
+        if: github.event_name != 'repository_dispatch'
         id: pages
         uses: actions/configure-pages@v3
 
       - name: Setup Ruby
+        if: github.event_name != 'repository_dispatch'
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
           bundler-cache: true
 
       - name: Build site
+        if: github.event_name != 'repository_dispatch'
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: "production"
 
       - name: Upload site artifact
+        if: github.event_name != 'repository_dispatch'
         uses: actions/upload-pages-artifact@v3
         with:
           path: "_site${{ steps.pages.outputs.base_path }}"
 
       - name: Deploy to GitHub Pages
+        if: github.event_name != 'repository_dispatch'
         id: deployment
         uses: actions/deploy-pages@v4

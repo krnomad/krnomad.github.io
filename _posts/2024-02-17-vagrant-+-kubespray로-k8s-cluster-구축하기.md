@@ -4,9 +4,8 @@ date: 2024-02-17
 title: "vagrant + kubespray로 k8s cluster 구축하기"
 tags: [k8s, vagrant, kubespray, ]
 categories: [kubernetes, ]
-pin: true
+description: "python3.9: ansible 8.5를 위해 필수로 설치."
 ---
-
 
 ## 구축 환경
 
@@ -15,12 +14,9 @@ pin: true
 
 ### ubuntu20.04에서 python3.9 설치
 
-
 [https://codechacha.com/ko/ubuntu-install-python39/](https://codechacha.com/ko/ubuntu-install-python39/)
 
-
 ### Ubuntu에서 virtualbox 설치
-
 
 {% raw %}
 ```bash
@@ -37,12 +33,9 @@ mokutil --sb-state
 ```
 {% endraw %}
 
-
 # Vagrant 로 VM 구축
 
-
 ### vagant 다운로드 및 설치
-
 
 {% raw %}
 ```bash
@@ -51,12 +44,9 @@ sudo apt install ./vagrant_2.4.1-1_amd64.deb
 ```
 {% endraw %}
 
-
 ### `Vagranffile` 작성
 
-
 ip는 virtualbox의 host전용 어뎁터 subnet 기준으로 변경 필요
-
 
 {% raw %}
 ```bash
@@ -103,9 +93,7 @@ end
 ```
 {% endraw %}
 
-
 ### Vagrant 실행
-
 
 {% raw %}
 ```bash
@@ -113,12 +101,9 @@ vagrant up --provider=virtualbox
 ```
 {% endraw %}
 
-
 ### SSH key 복사
 
-
 vagrant 초기 암호는 vagrant이다. 기타 sshd_config로 암호 설정 취소
-
 
 {% raw %}
 ```bash
@@ -129,15 +114,11 @@ ssh-copy-id vagrant@192.168.56.103
 ```
 {% endraw %}
 
-
 # Kubespray로 k8s cluster 구축
-
 
 ### Git
 
-
 [https://github.com/kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray)
-
 
 {% raw %}
 ```bash
@@ -145,9 +126,7 @@ git clone https://github.com/kubernetes-sigs/kubespray.git
 ```
 {% endraw %}
 
-
 ### package 설치
-
 
 {% raw %}
 ```bash
@@ -155,9 +134,7 @@ pip3 install -r requirements.txt
 ```
 {% endraw %}
 
-
 ### inventory 생성
-
 
 {% raw %}
 ```bash
@@ -165,9 +142,7 @@ cp -rpf inventory/sample/ inventory/mycluster
 ```
 {% endraw %}
 
-
 ### inventory.ini 변경
-
 
 {% raw %}
 ```bash
@@ -217,21 +192,15 @@ calico_rr
 ```
 {% endraw %}
 
-
 ### group_vars 변경 (optional)
-
 
 [https://kubespray.io/#/docs/vars](https://kubespray.io/#/docs/vars)
 
-
 metalLB 관련: kube_proxy_strict_arp
-
 
 audit관련: kubernetes_audit
 
-
 ### 실행
-
 
 {% raw %}
 ```bash
@@ -241,15 +210,11 @@ ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -become --beco
 ```
 {% endraw %}
 
-
 ## kubectl alias 설정
-
 
 ### for zsh
 
-
 [https://kubernetes.io/ko/docs/tasks/tools/included/optional-kubectl-configs-zsh/](https://kubernetes.io/ko/docs/tasks/tools/included/optional-kubectl-configs-zsh/)
-
 
 {% raw %}
 ```bash
@@ -259,12 +224,9 @@ echo 'complete -o default -F __start_kubectl k' >>~/.zshrc
 ```
 {% endraw %}
 
-
 ### for bash
 
-
 [https://kubernetes.io/ko/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/](https://kubernetes.io/ko/docs/tasks/tools/included/optional-kubectl-configs-bash-linux/)
-
 
 {% raw %}
 ```bash
@@ -275,12 +237,9 @@ echo 'complete -o default -F __start_kubectl k' >>~/.bashrc
 ```
 {% endraw %}
 
-
 ## 최종 확인
 
-
 node1에 들어가서 kubectl 동작 확인
-
 
 {% raw %}
 ```bash
@@ -296,12 +255,9 @@ vagrant@node1:~$
 ```
 {% endraw %}
 
-
 Krew를 통해 ctx, ns, konfig를 변경해서 사용
 
-
 # Link
-
 
 [https://nayoungs.tistory.com/entry/Kubernetes-Kubespray로-쿠버네티스-설치하기](https://nayoungs.tistory.com/entry/Kubernetes-Kubespray%EB%A1%9C-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0)
 
