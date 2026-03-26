@@ -4,7 +4,7 @@ date: 2024-03-03
 title: "zsh quick start"
 tags: [zsh, ]
 categories: [zsh, ]
-description: "sudo apt install wget curl git."
+description: "zsh, oh-my-zsh, powerline 폰트, 추천 플러그인까지 한 번에 맞추는 개인용 셸 환경 설정 메모입니다."
 ---
 
 # Install
@@ -91,4 +91,3 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 # 참고 링크
 
 [https://log4cat.tistory.com/7](https://log4cat.tistory.com/7)
-

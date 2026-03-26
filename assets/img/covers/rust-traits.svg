@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Rust Traits</title>
+  <desc id="desc">Warm cover showing Rust traits and composition over inheritance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#431407"/>
+      <stop offset="100%" stop-color="#7c2d12"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1030" cy="120" r="170" fill="#fb923c" opacity="0.14"/>
+  <rect x="120" y="150" width="250" height="160" rx="30" fill="#111827" stroke="#fed7aa" stroke-width="3"/>
+  <text x="160" y="215" fill="#ffedd5" font-family="Arial, sans-serif" font-size="32" font-weight="700">C++</text>
+  <text x="160" y="262" fill="#fdba74" font-family="Arial, sans-serif" font-size="24">Inheritance</text>
+  <path d="M410 230h150" stroke="#fdba74" stroke-width="12" stroke-linecap="round"/>
+  <path d="M540 195l60 35-60 35" fill="none" stroke="#fdba74" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="650" y="120" width="300" height="220" rx="34" fill="#1c1917" stroke="#fed7aa" stroke-width="3"/>
+  <text x="690" y="195" fill="#fff7ed" font-family="Arial, sans-serif" font-size="34" font-weight="700">Rust</text>
+  <text x="690" y="245" fill="#fdba74" font-family="Arial, sans-serif" font-size="24">Traits + Composition</text>
+  <rect x="710" y="275" width="170" height="26" rx="13" fill="#7c2d12"/>
+  <rect x="710" y="315" width="120" height="18" rx="9" fill="#9a3412"/>
+  <text x="120" y="450" fill="#fff7ed" font-family="Arial, sans-serif" font-size="62" font-weight="700">Traits over Inheritance</text>
+  <text x="120" y="513" fill="#fed7aa" font-family="Arial, sans-serif" font-size="31">C++ 관점에서 Rust trait를 이해하기</text>
+</svg>

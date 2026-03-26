@@ -4,7 +4,7 @@ date: 2024-02-20
 title: "Diagram as code"
 tags: [Diagram, ]
 categories: [Diagram, ]
-description: "https://diagrams.mingrammer.com/."
+description: "Mermaid, PlantUML, diagrams 같은 도구를 비교하며 코드로 아키텍처 다이어그램을 관리하는 방법을 모아둔 글입니다."
 ---
 
 # **Diagram as Code**
@@ -120,4 +120,3 @@ console('hello, JavaScript')
 {% endraw %}
 
 ![6](/assets/img/2024-02-20-Diagram-as-code.md/6.png)
-

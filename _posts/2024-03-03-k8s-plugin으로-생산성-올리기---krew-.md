@@ -4,7 +4,7 @@ date: 2024-03-03
 title: "k8s plugin으로 생산성 올리기 - krew "
 tags: [krew, kubetail, ]
 categories: [DevOps, K8S, kubernetes, ]
-description: "krew는 kubectl에서 사용할 수 있는 유요한 plugin을 설치할 수 있게 도와준다."
+description: "kubectl 생산성을 올려주는 krew와 ctx, ns, konfig, kubetail 같은 실전 플러그인을 빠르게 훑는 메모입니다."
 ---
 
 krew는 kubectl에서 사용할 수 있는 유요한 plugin을 설치할 수 있게 도와준다.
@@ -101,4 +101,3 @@ kubetail -n kube-system calico
 # Link
 
 https://gurumee92.tistory.com/302
-

@@ -5,6 +5,9 @@ title: "Kubernetes PersistentVolume 상태"
 tags: [k8s, persistentvolume, storage]
 categories: [kubernetes, ]
 description: "PV가 Released 상태가 되는 이유와 Retain 정책, 재사용 절차를 운영 관점에서 정리한 글."
+image:
+  path: /assets/img/covers/pv-retain.svg
+  alt: PersistentVolume retain policy concept cover
 pin: true
 ---
 
@@ -48,4 +51,3 @@ PV가 'Released' 상태가 되었을 때, 다른 파드나 애플리케이션이
 PV의 **'Released'** 상태는 단순한 오류가 아니라, **데이터 유실을 막기 위한 Kubernetes의 중요한 설계 의도**입니다. 만약 PV가 'Released' 상태라면, 안전을 위해 관리자가 직접 볼륨의 상태를 확인하고 필요한 조치를 취해야 함을 의미합니다.
 
 PV의 Reclaim Policy에 대한 올바른 이해는 데이터를 안전하게 관리하고 운영 환경에서 발생할 수 있는 잠재적 문제를 사전에 방지하는 데 큰 도움이 됩니다.
-

@@ -4,7 +4,7 @@ date: 2024-02-17
 title: "vagrant + kubespray로 k8s cluster 구축하기"
 tags: [k8s, vagrant, kubespray, ]
 categories: [kubernetes, ]
-description: "python3.9: ansible 8.5를 위해 필수로 설치."
+description: "Vagrant와 Kubespray로 로컬 실습용 Kubernetes 클러스터를 올리는 과정을 VM 준비부터 inventory 설정까지 정리한 글입니다."
 ---
 
 ## 구축 환경
@@ -260,4 +260,3 @@ Krew를 통해 ctx, ns, konfig를 변경해서 사용
 # Link
 
 [https://nayoungs.tistory.com/entry/Kubernetes-Kubespray로-쿠버네티스-설치하기](https://nayoungs.tistory.com/entry/Kubernetes-Kubespray%EB%A1%9C-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0)
-

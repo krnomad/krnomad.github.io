@@ -5,6 +5,9 @@ title: "Jenkins pipeline deep deive - #2 Jenkins slave 깊게 파보기"
 tags: [Jenkins, ]
 categories: [Jenkins, DevOps, ]
 description: "Jenkins 에이전트 구조와 inbound/outbound 설정 흐름을 스크린샷과 함께 정리한 글."
+image:
+  path: /assets/img/covers/jenkins-agent.svg
+  alt: Jenkins controller and agent concept cover
 pin: true
 ---
 

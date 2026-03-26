@@ -4,7 +4,10 @@ date: 2024-08-26
 title: "Google Cloud Build와 Cloud Run을 활용한 Docker 이미지 빌드 및 배포"
 tags: [cloud, GCP, cloud run, gcloud, ]
 categories: [cloud, GCP, ]
-description: "Google Cloud Build와 Cloud Run으로 Docker 이미지를 빌드하고 배포하는 기본 흐름 정리."
+description: "로컬 Docker 흐름을 Cloud Build와 Cloud Run으로 옮길 때 필요한 빌드, 인증, 배포 단계를 순서대로 정리한 글."
+image:
+  path: /assets/img/covers/cloud-build-run.svg
+  alt: Cloud Build and Cloud Run deployment concept cover
 pin: true
 ---
 

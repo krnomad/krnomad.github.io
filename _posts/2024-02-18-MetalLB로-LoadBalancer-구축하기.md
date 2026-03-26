@@ -4,7 +4,7 @@ date: 2024-02-18
 title: "MetalLB로 LoadBalancer 구축하기"
 tags: [MetalLB, LoadBalancer, k8s, ]
 categories: [kubernetes, ]
-description: "helm pull metallb/metallb --version=0.12.1."
+description: "온프레미스 클러스터에서 MetalLB로 외부 IP 대역을 할당하고 최신 설정 방식까지 이어서 보는 빠른 메모입니다."
 ---
 
 ### 환경
