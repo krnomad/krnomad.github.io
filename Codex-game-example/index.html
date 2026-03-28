@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Collector</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel panel-left">
+        <h1>Star Collector</h1>
+        <p class="tagline">Collect stars. Dodge enemies. Survive the neon arena.</p>
+
+        <div class="hud">
+          <div class="stat">
+            <span class="label">Score</span>
+            <strong id="score">0</strong>
+          </div>
+          <div class="stat">
+            <span class="label">Time</span>
+            <strong id="time">30</strong>
+          </div>
+          <div class="stat">
+            <span class="label">Best</span>
+            <strong id="best">0</strong>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="startButton">Start / Restart</button>
+        </div>
+
+        <div class="instructions">
+          <h2>How to play</h2>
+          <ul>
+            <li>Move with <strong>WASD</strong> or <strong>Arrow keys</strong>.</li>
+            <li>Collect yellow stars for points and bonus time.</li>
+            <li>Avoid red enemy orbs. One hit ends the run.</li>
+            <li>The arena gets harder over time.</li>
+          </ul>
+        </div>
+
+        <p id="message" class="message">Press Start to begin.</p>
+      </section>
+
+      <section class="panel panel-right">
+        <div id="gameArea" class="game-area" aria-label="Game area">
+          <div id="player" class="player"></div>
+          <div id="collectible" class="collectible"></div>
+        </div>
+
+        <div class="touch-controls" aria-label="Touch controls">
+          <button data-dir="up">▲</button>
+          <div class="touch-row">
+            <button data-dir="left">◀</button>
+            <button data-dir="down">▼</button>
+            <button data-dir="right">▶</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
