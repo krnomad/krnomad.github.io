@@ -1,0 +1,211 @@
+:root {
+  color-scheme: dark;
+  --bg: #08111f;
+  --panel: rgba(15, 23, 42, 0.88);
+  --panel-border: rgba(148, 163, 184, 0.2);
+  --text: #e5eefc;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --danger: #fb7185;
+  --gold: #fde047;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 30%),
+    linear-gradient(180deg, #020617, var(--bg));
+}
+
+.app {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+  padding: 24px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+}
+
+.panel-left {
+  padding: 24px;
+}
+
+.panel-left h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.tagline {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.hud {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.stat {
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stat strong {
+  font-size: 1.6rem;
+}
+
+.actions {
+  margin-top: 18px;
+}
+
+button {
+  border: 0;
+  border-radius: 16px;
+  padding: 12px 16px;
+  font: inherit;
+  font-weight: 700;
+  color: #03111d;
+  background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.instructions {
+  margin-top: 26px;
+}
+
+.instructions h2 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.instructions ul {
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.message {
+  margin-top: 24px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.14);
+}
+
+.panel-right {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  background:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    radial-gradient(circle at center, rgba(56, 189, 248, 0.08), transparent 45%),
+    #020617;
+  background-size: 40px 40px, 40px 40px, auto, auto;
+}
+
+.player,
+.collectible,
+.enemy {
+  position: absolute;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+}
+
+.player {
+  width: 28px;
+  height: 28px;
+  background: radial-gradient(circle at 35% 35%, #ffffff, #7dd3fc 45%, #0284c7 80%);
+  box-shadow: 0 0 22px rgba(56, 189, 248, 0.8);
+}
+
+.collectible {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle at center, #fff7ae, var(--gold));
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 92%, 50% 70%, 21% 92%, 32% 57%, 2% 35%, 39% 35%);
+  box-shadow: 0 0 20px rgba(253, 224, 71, 0.65);
+}
+
+.enemy {
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 35% 35%, #fecdd3, var(--danger) 55%, #be123c 85%);
+  box-shadow: 0 0 18px rgba(251, 113, 133, 0.55);
+}
+
+.touch-controls {
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.touch-row {
+  display: flex;
+  gap: 10px;
+}
+
+.touch-controls button {
+  min-width: 64px;
+  min-height: 52px;
+  border-radius: 18px;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .game-area {
+    min-height: 340px;
+  }
+
+  .touch-controls {
+    display: flex;
+  }
+}
