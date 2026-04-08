@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="LangGraph router reducer annotated cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a78bfa" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" rx="24" />
+  <g opacity="0.15">
+    <circle cx="180" cy="140" r="90" fill="#38bdf8" />
+    <circle cx="1020" cy="520" r="110" fill="#a78bfa" />
+    <circle cx="960" cy="120" r="70" fill="#22c55e" />
+  </g>
+  <g fill="none" stroke="url(#accent)" stroke-width="6" stroke-linecap="round">
+    <path d="M170 360 C270 240, 380 240, 470 315" />
+    <path d="M470 315 C560 390, 665 390, 760 315" />
+    <path d="M760 315 C845 245, 950 245, 1030 320" />
+  </g>
+  <g fill="#e2e8f0">
+    <circle cx="150" cy="380" r="28" fill="#0ea5e9" />
+    <circle cx="470" cy="315" r="28" fill="#8b5cf6" />
+    <circle cx="760" cy="315" r="28" fill="#22c55e" />
+    <circle cx="1050" cy="340" r="28" fill="#f59e0b" />
+  </g>
+  <g font-family="Pretendard, Apple SD Gothic Neo, Segoe UI, sans-serif" fill="#f8fafc">
+    <text x="80" y="120" font-size="54" font-weight="700">LangGraph 입문자가 가장 헷갈리는 3가지</text>
+    <text x="80" y="190" font-size="34" fill="#cbd5e1">router · reducer · Annotated</text>
+    <text x="80" y="470" font-size="30" fill="#93c5fd">분기 키 / 상태 병합 규칙 / 타입에 붙는 메타데이터</text>
+    <text x="80" y="530" font-size="22" fill="#94a3b8">krnomad.github.io</text>
+  </g>
+</svg>
