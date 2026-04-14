@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <circle cx="170" cy="140" r="10" fill="#22C55E"/>
+  <circle cx="210" cy="140" r="10" fill="#38BDF8"/>
+  <circle cx="250" cy="140" r="10" fill="#A78BFA"/>
+  <text x="100" y="240" fill="#E5E7EB" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700">LangGraph 실전 숙제 로드맵</text>
+  <text x="100" y="300" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="28">State · Conditional Routing · Cycles · Reducer · Pydantic · Tool Calling</text>
+  <rect x="100" y="360" width="190" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="125" y="405" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">State</text>
+  <rect x="320" y="360" width="250" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="345" y="405" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Conditional Edge</text>
+  <rect x="600" y="360" width="180" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="640" y="405" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Cycle</text>
+  <rect x="810" y="360" width="210" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="845" y="405" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Reducer</text>
+  <path d="M290 395H320" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M570 395H600" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M780 395H810" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+  <text x="100" y="500" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="24">직접 구현하면서 익히는 LangGraph 입문 이후의 첫 연습 세트</text>
+</svg>
