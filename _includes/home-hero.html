@@ -1,63 +1,18 @@
 {% assign visible_posts = site.posts | where_exp: 'item', 'item.hidden != true' %}
 {% assign featured_posts = visible_posts | where_exp: 'item', 'item.pin == true' %}
-{% assign latest_post = visible_posts.first %}
 
 <section class="home-hero">
   <div class="home-hero__copy">
     <span class="home-hero__eyebrow">Latest First</span>
-    <h1>새 글이 먼저 보이고, 오래 남길 글은 따로 고르는 구조로 정리했습니다.</h1>
+    <h1>최신 글은 바로 목록에서 보고, 홈은 가볍게 읽기 시작하는 입구로만 두었습니다.</h1>
     <p class="home-hero__lede">
-      Kubernetes, Jenkins, GCP, Rust, LangGraph를 다루면서 실무에서 다시 찾게 되는 메모를 남깁니다.
-      홈에서는 최신 글을 우선 노출하고, 추천 글은 별도 영역으로 분리해 탐색 흐름을 단순하게 유지합니다.
+      Kubernetes, Jenkins, GCP, Rust, LangGraph, AI 코딩 워크플로우를 다루면서 다시 찾아보게 되는 실무 메모를 남깁니다.
+      별도 추천 섹션 대신 아래 카드 목록이 최신순으로 이어집니다.
     </p>
     <div class="home-hero__stats">
       <span><strong>{{ visible_posts.size }}</strong> posts</span>
-      <span><strong>{{ featured_posts.size }}</strong> featured</span>
+      <span><strong>{{ featured_posts.size }}</strong> pinned</span>
       <span><strong>{{ site.paginate }}</strong> per page</span>
-    </div>
-  </div>
-
-  <div class="home-hero__panel">
-    <p class="home-hero__panel-title">가장 최근 글</p>
-
-    {% if latest_post %}
-      <a class="home-hero__latest" href="{{ latest_post.url | relative_url }}">
-        <span class="home-hero__latest-label">Newest</span>
-        <strong>{{ latest_post.title }}</strong>
-        <span>{{ latest_post.description | default: latest_post.excerpt | strip_html | truncate: 120 }}</span>
-      </a>
-    {% endif %}
-
-    <div class="home-hero__split">
-      <div>
-        <p class="home-hero__subheading">최근 업데이트</p>
-        <ul class="home-hero__featured list-unstyled mb-0">
-          {% for post in visible_posts offset: 1 limit: 4 %}
-            <li>
-              <a href="{{ post.url | relative_url }}">
-                <strong>{{ post.title }}</strong>
-                <span>{% include datetime.html date=post.date lang=site.lang %}</span>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      {% if featured_posts.size > 0 %}
-        <div>
-          <p class="home-hero__subheading">추천 글</p>
-          <ul class="home-hero__featured list-unstyled mb-0">
-            {% for post in featured_posts limit: 3 %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <strong>{{ post.title }}</strong>
-                  <span>{{ post.description | default: post.excerpt | strip_html | truncate: 88 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endif %}
     </div>
   </div>
 </section>

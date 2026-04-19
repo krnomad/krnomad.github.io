@@ -50,7 +50,15 @@
   {% assign urls = urls | append: ',' | append: site.data.origin[type].toc.js %}
 {% endif %}
 
-{% if page.mermaid %}
+{% assign has_mermaid_diagram = page.mermaid %}
+{% if has_mermaid_diagram != true and page.content contains '```mermaid' %}
+  {% assign has_mermaid_diagram = true %}
+{% endif %}
+{% if has_mermaid_diagram != true and content contains 'language-mermaid' %}
+  {% assign has_mermaid_diagram = true %}
+{% endif %}
+
+{% if has_mermaid_diagram %}
   {% assign urls = urls | append: ',' | append: site.data.origin[type].mermaid.js %}
 {% endif %}
 
