@@ -1,3 +1,5 @@
+@use "variables";
+
 /*
 * Mainly scss modules, only imported to `assets/css/main.scss`
 */
@@ -7,7 +9,7 @@
 %heading {
   color: var(--heading-color);
   font-weight: 400;
-  font-family: $font-family-heading;
+  font-family: variables.$font-family-heading;
 }
 
 %section {
@@ -92,7 +94,7 @@
 }
 
 %rounded {
-  border-radius: $base-radius;
+  border-radius: variables.$base-radius;
 }
 
 %img-caption {
@@ -146,6 +148,84 @@
 }
 
 /* ---------- scss mixin --------- */
+
+@mixin link-hover-style {
+  color: #d2603a !important;
+  border-bottom: 1px solid #d2603a;
+  text-decoration: none;
+}
+
+@mixin link-color-style {
+  color: var(--link-color);
+}
+
+@mixin link-underline-style {
+  border-bottom: 1px solid var(--link-underline-color);
+}
+
+@mixin clickable-transition-style {
+  transition: all 0.3s ease-in-out;
+}
+
+@mixin no-cursor-style {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin no-bottom-border-style {
+  border-bottom: none;
+}
+
+@mixin cursor-pointer-style {
+  cursor: pointer;
+}
+
+@mixin normal-font-style-style {
+  font-style: normal;
+}
+
+@mixin rounded-style {
+  border-radius: variables.$base-radius;
+}
+
+@mixin img-caption-style {
+  + em {
+    display: block;
+    text-align: center;
+    font-style: normal;
+    font-size: 80%;
+    padding: 0;
+    color: #6d6c6c;
+  }
+}
+
+@mixin text-clip-style {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+@mixin text-highlight-style {
+  color: var(--text-muted-hightlight-color);
+  font-weight: 600;
+}
+
+@mixin text-sm-style {
+  font-size: 0.85rem;
+}
+
+@mixin text-xs-style {
+  font-size: 0.8rem;
+}
+
+@mixin tag-hover-style {
+  background: var(--tag-hover);
+  transition: background 0.35s ease-in-out;
+}
 
 @mixin mt-mb($value) {
   margin-top: $value;

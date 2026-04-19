@@ -1,3 +1,5 @@
+@use "addon/module";
+
 /*
   Style for Tab Categories
 */
@@ -12,7 +14,7 @@
 
   &.card,
   .list-group {
-    @extend %rounded;
+    @include module.rounded-style;
   }
 
   .card-header {

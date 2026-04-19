@@ -1,3 +1,5 @@
+@use "addon/module";
+
 /*
   Post-specific style
 */
@@ -21,7 +23,7 @@ h1 + .post-meta {
 
   em,
   time {
-    @extend %text-highlight;
+    @include module.text-highlight-style;
   }
 
   em {
@@ -32,7 +34,7 @@ h1 + .post-meta {
 }
 
 .post-tail-wrapper {
-  @extend %text-sm;
+  @include module.text-sm-style;
 
   margin-top: 6rem;
   border-bottom: 1px double var(--main-border-color);
@@ -41,20 +43,20 @@ h1 + .post-meta {
     line-height: 1.2rem;
 
     > a {
-      @extend %text-highlight;
+      @include module.text-highlight-style;
 
       &:hover {
-        @extend %link-hover;
+        @include module.link-hover-style;
       }
     }
 
     span:last-child {
-      @extend %text-sm;
+      @include module.text-sm-style;
     }
   } /* .license-wrapper */
 
   .post-meta a:not(:hover) {
-    @extend %link-underline;
+    @include module.link-underline-style;
   }
 
   .share-wrapper {
@@ -94,7 +96,7 @@ h1 + .post-meta {
         border: none;
         line-height: inherit;
 
-        @extend %cursor-pointer;
+        @include module.cursor-pointer-style;
       }
     } /* .share-icons */
   } /* .share-wrapper */
@@ -118,9 +120,9 @@ h1 + .post-meta {
 
   .post-tag {
     &:hover {
-      @extend %link-hover;
-      @extend %tag-hover;
-      @extend %no-bottom-border;
+      @include module.link-hover-style;
+      @include module.tag-hover-style;
+      @include module.no-bottom-border-style;
     }
   }
 }
@@ -285,8 +287,8 @@ h1 + .post-meta {
   }
 
   time {
-    @extend %normal-font-style;
-    @extend %text-xs;
+    @include module.normal-font-style-style;
+    @include module.text-xs-style;
 
     color: var(--text-muted-color);
   }
@@ -303,7 +305,7 @@ h1 + .post-meta {
 
   .card {
     h4 {
-      @extend %text-clip;
+      @include module.text-clip-style;
     }
   }
 }

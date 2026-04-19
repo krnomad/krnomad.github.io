@@ -1,3 +1,5 @@
+@use "addon/module";
+
 /*
   Style for Homepage
 */
@@ -36,7 +38,7 @@
       padding: 1rem;
 
       .card-title {
-        @extend %text-clip;
+        @include module.text-clip-style;
 
         color: var(--heading-color) !important;
         font-size: 1.25rem;
@@ -50,7 +52,7 @@
         @extend %muted;
 
         p {
-          @extend %text-clip;
+          @include module.text-clip-style;
 
           line-height: 1.5;
           margin: 0;
@@ -67,7 +69,7 @@
         }
 
         em {
-          @extend %normal-font-style;
+          @include module.normal-font-style-style;
 
           color: inherit;
         }

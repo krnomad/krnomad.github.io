@@ -1,3 +1,5 @@
+@use "addon/module";
+
 /*
   Style for page Category and Tag
 */
@@ -28,7 +30,7 @@
 
     /* post's title */
     > a {
-      @extend %no-bottom-border;
+      @include module.no-bottom-border-style;
 
       font-size: 1.1rem;
     }
@@ -48,7 +50,7 @@
 #page-tag,
 #access-lastmod {
   a:hover {
-    @extend %link-hover;
+    @include module.link-hover-style;
 
     margin-bottom: -1px; /* Avoid jumping */
   }
