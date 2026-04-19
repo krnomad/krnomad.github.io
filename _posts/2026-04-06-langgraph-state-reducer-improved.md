@@ -11,7 +11,8 @@ image:
   alt: LangGraph state와 reducer 개념을 설명하는 흐름도
 ---
 
-> [!summary]
+> **핵심 요약**
+>
 > **핵심 요약**
 > - LangGraph의 `State`는 노드 사이를 직접 흘러가는 단일 output 객체라기보다, 그래프 전체가 공유하는 상태 저장소입니다.
 > - 각 노드는 전체 state를 읽고, 바뀐 부분만 partial update 형태로 반환합니다.

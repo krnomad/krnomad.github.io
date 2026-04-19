@@ -11,7 +11,8 @@ image:
   alt: LangGraph 숙제 로드맵 커버 이미지
 ---
 
-> [!summary]
+> **핵심 요약**
+>
 > **핵심 요약**
 > - LangGraph는 문법만 보는 것보다 `state가 흐름을 결정하는 경험`을 직접 해보는 것이 훨씬 중요하다.
 > - 처음에는 직선형 그래프부터 시작하고, 그다음 조건 분기, 반복, reducer, Pydantic, tool calling으로 확장하는 순서가 가장 자연스럽다.
