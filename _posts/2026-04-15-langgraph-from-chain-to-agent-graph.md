@@ -3,7 +3,7 @@ layout: post
 title: "LangGraph, 체인이 아니라 그래프로 생각하기 시작했을 때 보인 것들"
 date: 2026-04-15 07:55:00 +0900
 categories: [AI, Agent]
-tags: [LangGraph, LangChain, Agent, ToolCalling, Python, Pydantic]
+tags: [langgraph, langchain, agent, tool-calling, python, pydantic]
 pin: false
 image: /assets/img/posts/2026-04-15-langgraph-from-chain-to-agent-graph.png
 toc: true

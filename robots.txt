@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: http://krnomad.github.io/sitemap.xml
