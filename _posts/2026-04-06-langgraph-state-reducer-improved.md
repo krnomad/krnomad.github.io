@@ -7,7 +7,7 @@ description: LangGraph의 State와 Reducer를 처음 학습할 때 헷갈리는 
 pin: false
 toc: true
 image:
-  path: /assets/img/posts/langgraph-state-reducer-cover.png
+  path: /assets/img/posts/langgraph-state-reducer-cover.svg
   alt: LangGraph state와 reducer 개념을 설명하는 흐름도
 ---
 

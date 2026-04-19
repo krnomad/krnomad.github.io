@@ -5,7 +5,7 @@ date: 2026-04-15 07:55:00 +0900
 categories: [AI, Agent]
 tags: [langgraph, langchain, agent, tool-calling, python, pydantic]
 pin: false
-image: /assets/img/posts/2026-04-15-langgraph-from-chain-to-agent-graph.png
+image: /assets/img/posts/langgraph-from-chain-to-agent-graph-cover.svg
 toc: true
 ---
 

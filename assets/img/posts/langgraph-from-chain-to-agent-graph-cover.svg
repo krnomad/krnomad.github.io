@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <rect x="60" y="60" width="1080" height="510" rx="28" fill="#111827" stroke="#334155" stroke-width="2"/>
+  <circle cx="170" cy="140" r="10" fill="#22C55E"/>
+  <circle cx="210" cy="140" r="10" fill="#38BDF8"/>
+  <circle cx="250" cy="140" r="10" fill="#F59E0B"/>
+  <text x="100" y="220" fill="#E5E7EB" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">LangGraph, 체인이 아니라</text>
+  <text x="100" y="282" fill="#E5E7EB" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">그래프로 생각하기</text>
+  <text x="100" y="338" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="28">State · Node · Edge · Conditional Routing · Cycle · Tool Calling</text>
+  <rect x="100" y="392" width="170" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="148" y="437" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">State</text>
+  <rect x="305" y="392" width="165" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="348" y="437" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Node</text>
+  <rect x="505" y="392" width="165" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="554" y="437" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Edge</text>
+  <rect x="705" y="392" width="215" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="737" y="437" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Conditional</text>
+  <rect x="955" y="392" width="145" height="70" rx="16" fill="#1E293B" stroke="#475569"/>
+  <text x="989" y="437" fill="#F8FAFC" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">Cycle</text>
+  <path d="M270 427H305" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M470 427H505" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M670 427H705" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M920 427H955" stroke="#64748B" stroke-width="4" stroke-linecap="round"/>
+  <text x="100" y="520" fill="#CBD5E1" font-family="Arial, Helvetica, sans-serif" font-size="24">직선형 체인에서 상태 기반 그래프로 사고를 전환할 때 보이는 설계 관점</text>
+</svg>

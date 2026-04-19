@@ -15,13 +15,24 @@ refactor: true
     <article class="card-wrapper card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
+        {% assign has_preview_image = false %}
 
         {% if post.image %}
           {% assign src = post.image.path | default: post.image %}
-          {% unless src contains '//' %}
-            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
-          {% endunless %}
 
+          {% if src contains '//' %}
+            {% assign has_preview_image = true %}
+          {% else %}
+            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
+            {% assign image_file = site.static_files | where: 'path', src | first %}
+
+            {% if image_file %}
+              {% assign has_preview_image = true %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+        {% if has_preview_image %}
           {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
 
           {% assign lqip = null %}
