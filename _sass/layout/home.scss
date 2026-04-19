@@ -4,6 +4,14 @@
   Style for Homepage
 */
 
+@mixin home-card-img-radius($left, $right) {
+  border-radius: $left $right 0 0;
+}
+
+@mixin home-muted-text {
+  color: var(--text-muted-color) !important;
+}
+
 #post-list {
   margin-top: 2rem;
 
@@ -21,15 +29,11 @@
     border: 0;
     background: none;
 
-    %img-radius {
-      border-radius: $base-radius $base-radius 0 0;
-    }
-
     .preview-img {
-      @extend %img-radius;
+      @include home-card-img-radius($base-radius, $base-radius);
 
       img {
-        @extend %img-radius;
+        @include home-card-img-radius($base-radius, $base-radius);
       }
     }
 
@@ -44,12 +48,8 @@
         font-size: 1.25rem;
       }
 
-      %muted {
-        color: var(--text-muted-color) !important;
-      }
-
       .card-text.content {
-        @extend %muted;
+        @include home-muted-text;
 
         p {
           @include module.text-clip-style;
@@ -60,7 +60,7 @@
       }
 
       .post-meta {
-        @extend %muted;
+        @include home-muted-text;
 
         i {
           &:not(:first-child) {
@@ -132,12 +132,13 @@
 
 /* Tablet */
 @media all and (min-width: 768px) {
-  %img-radius {
-    border-radius: 0 $base-radius $base-radius 0;
-  }
-
   #post-list {
     .card {
+      .preview-img,
+      .preview-img img {
+        border-radius: 0 $base-radius $base-radius 0;
+      }
+
       .card-body {
         padding: 1.75rem 1.75rem 1.25rem 1.75rem;
 

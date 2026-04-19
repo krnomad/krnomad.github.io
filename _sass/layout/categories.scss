@@ -4,10 +4,6 @@
   Style for Tab Categories
 */
 
-%category-icon-color {
-  color: gray;
-}
-
 .categories {
   margin-bottom: 2rem;
   border-color: var(--categories-border);
@@ -31,8 +27,7 @@
   }
 
   i {
-    @extend %category-icon-color;
-
+    color: gray;
     font-size: 86%; /* fontawesome icons */
   }
 

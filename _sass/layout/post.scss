@@ -4,10 +4,18 @@
   Post-specific style
 */
 
-%btn-post-nav {
+@mixin btn-post-nav {
   width: 50%;
   position: relative;
   border-color: var(--btn-border-color);
+}
+
+@mixin share-icon-size {
+  font-size: 1.125rem;
+}
+
+@mixin btn-share-hover {
+  color: var(--btn-share-hover-color) !important;
 }
 
 @mixin dot($pl: 0.25rem, $pr: 0.25rem) {
@@ -66,27 +74,23 @@ h1 + .post-meta {
     -ms-user-select: none;
     user-select: none;
 
-    %icon-size {
-      font-size: 1.125rem;
-    }
-
     .share-icons {
       display: flex;
 
       i {
         color: var(--btn-share-color);
 
-        @extend %icon-size;
+        @include share-icon-size;
       }
 
       > * {
-        @extend %icon-size;
+        @include share-icon-size;
 
         margin-left: 0.5rem;
 
         &:hover {
           i {
-            @extend %btn-share-hovor;
+            @include btn-share-hover;
           }
         }
       }
@@ -129,7 +133,7 @@ h1 + .post-meta {
 
 .post-navigation {
   .btn {
-    @extend %btn-post-nav;
+    @include btn-post-nav;
 
     &:not(:hover) {
       color: var(--link-color);
@@ -142,7 +146,7 @@ h1 + .post-meta {
     }
 
     &.disabled {
-      @extend %btn-post-nav;
+      @include btn-post-nav;
 
       pointer-events: auto;
       cursor: not-allowed;
@@ -317,10 +321,6 @@ h1 + .post-meta {
 
 .utterances {
   max-width: 100%;
-}
-
-%btn-share-hovor {
-  color: var(--btn-share-hover-color) !important;
 }
 
 .share-label {

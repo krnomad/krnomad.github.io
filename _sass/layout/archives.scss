@@ -7,8 +7,8 @@
 
   $timeline-width: 4px;
 
-  %timeline {
-    content: '';
+  @mixin timeline-bar {
+    content: "";
     width: $timeline-width;
     position: relative;
     float: left;
@@ -23,7 +23,7 @@
     margin-left: -$timeline-width;
 
     &::before {
-      @extend %timeline;
+      @include timeline-bar;
 
       height: 72px;
       left: 79px;
@@ -31,7 +31,7 @@
     }
 
     &:first-child::before {
-      @extend %timeline;
+      @include timeline-bar;
 
       height: 32px;
       top: 24px;
@@ -75,7 +75,7 @@
       }
 
       &::before {
-        @extend %timeline;
+        @include timeline-bar;
 
         top: 0;
         left: 77px;
