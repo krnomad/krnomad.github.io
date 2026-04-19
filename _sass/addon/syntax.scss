@@ -2,6 +2,8 @@
 * The syntax highlight.
 */
 
+@use "module";
+@use "variables";
 @import 'colors/syntax-light';
 @import 'colors/syntax-dark';
 
@@ -31,11 +33,11 @@ html {
 
 /* -- code snippets -- */
 
-%code-snippet-bg {
+@mixin code-snippet-bg {
   background-color: var(--highlight-bg-color);
 }
 
-%code-snippet-padding {
+@mixin code-snippet-padding {
   padding-left: 1rem;
   padding-right: 1.5rem;
 }
@@ -47,11 +49,11 @@ html {
 }
 
 .highlight {
-  @extend %rounded;
-  @extend %code-snippet-bg;
+  @include module.rounded-style;
+  @include code-snippet-bg;
 
   @at-root figure#{&} {
-    @extend %code-snippet-bg;
+    @include code-snippet-bg;
   }
 
   overflow: auto;
@@ -130,7 +132,7 @@ code {
 }
 
 td.rouge-code {
-  @extend %code-snippet-padding;
+  @include code-snippet-padding;
 
   /*
     Prevent some browser extends from
@@ -144,8 +146,8 @@ td.rouge-code {
 }
 
 div[class^='language-'] {
-  @extend %rounded;
-  @extend %code-snippet-bg;
+  @include module.rounded-style;
+  @include code-snippet-bg;
 
   box-shadow: var(--language-border-color) 0 0 0 1px;
 
@@ -179,23 +181,23 @@ div {
 }
 
 .code-header {
-  @extend %no-cursor;
+  @include module.no-cursor-style;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: $code-header-height;
+  height: variables.$code-header-height;
   margin-left: 0.75rem;
   margin-right: 0.25rem;
 
   /* the label block */
   span {
-    line-height: $code-header-height;
+    line-height: variables.$code-header-height;
 
     /* label icon */
     i {
       font-size: 1rem;
-      width: $code-icon-width;
+      width: variables.$code-icon-width;
       color: var(--code-header-icon-color);
 
       &.small {
@@ -219,12 +221,12 @@ div {
 
   /* clipboard */
   button {
-    @extend %cursor-pointer;
-    @extend %rounded;
+    @include module.cursor-pointer-style;
+    @include module.rounded-style;
 
     border: 1px solid transparent;
-    height: $code-header-height;
-    width: $code-header-height;
+    height: variables.$code-header-height;
+    width: variables.$code-header-height;
     padding: 0;
     background-color: inherit;
 
@@ -261,7 +263,7 @@ div {
     .content > & {
       @include ml-mr(0);
 
-      border-radius: $base-radius;
+      border-radius: variables.$base-radius;
     }
 
     .code-header {
@@ -273,19 +275,19 @@ div {
         content: '';
         display: inline-block;
         margin-left: $dot-margin;
-        width: $code-dot-size;
-        height: $code-dot-size;
+        width: variables.$code-dot-size;
+        height: variables.$code-dot-size;
         border-radius: 50%;
         background-color: var(--code-header-muted-color);
-        box-shadow: ($code-dot-size + $code-dot-gap) 0 0
+        box-shadow: (variables.$code-dot-size + variables.$code-dot-gap) 0 0
             var(--code-header-muted-color),
-          ($code-dot-size + $code-dot-gap) * 2 0 0
+          (variables.$code-dot-size + variables.$code-dot-gap) * 2 0 0
             var(--code-header-muted-color);
       }
 
       span {
         // center the text of label
-        margin-left: calc(($dot-margin + $code-dot-size) / 2 * -1);
+        margin-left: calc(($dot-margin + variables.$code-dot-size) / 2 * -1);
       }
     }
   }
