@@ -182,6 +182,54 @@
   border-radius: 1.25rem;
 }
 
+.post-preview-placeholder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  padding: 1.1rem;
+  border-radius: 1.25rem 1.25rem 0 0;
+  background:
+    radial-gradient(circle at top left, rgba(65, 184, 131, 0.24), transparent 38%),
+    linear-gradient(160deg, rgba(54, 116, 181, 0.18), rgba(54, 116, 181, 0.02) 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 252, 0.95));
+}
+
+.post-preview-placeholder__eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-bottom: 0.85rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #1f4f79;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.post-preview-placeholder__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+  margin-bottom: 0.9rem;
+}
+
+.post-preview-placeholder__tags span,
+.post-preview-placeholder__date {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--text-muted-color);
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+
 #post-list .card-wrapper:hover .card {
   transform: translateY(-3px);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
@@ -217,5 +265,11 @@
   .home-hero__split {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
+  }
+
+  .post-preview-placeholder {
+    min-height: 100%;
+    border-radius: 0 1.25rem 1.25rem 0;
+    padding: 1.4rem;
   }
 }

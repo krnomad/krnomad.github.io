@@ -4,6 +4,9 @@ date: 2026-04-06 12:00:00 +0900
 categories: [AI, LangGraph]
 tags: [langgraph, state, reducer, pydantic, typeddict, agent]
 description: LangGraph를 처음 학습할 때 가장 많이 헷갈리는 State, Node, Edge, Reducer 개념을 예제 중심으로 정리한 글.
+hidden: true
+sitemap: false
+redirect_to: /posts/langgraph-state-reducer-improved/
 ---
 
 LangGraph를 처음 볼 때 가장 헷갈리는 지점 중 하나는 `State`입니다.  

@@ -35,6 +35,28 @@ refactor: true
           </div>
 
           {% assign card_body_col = '7' %}
+        {% else %}
+          <div class="col-md-5">
+            <div class="post-preview-placeholder">
+              <span class="post-preview-placeholder__eyebrow">
+                {{ post.categories.first | default: 'Latest Note' }}
+              </span>
+
+              {% if post.tags.size > 0 %}
+                <div class="post-preview-placeholder__tags">
+                  {% for tag in post.tags limit: 2 %}
+                    <span>#{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              <div class="post-preview-placeholder__date">
+                {% include datetime.html date=post.date lang=lang %}
+              </div>
+            </div>
+          </div>
+
+          {% assign card_body_col = '7' %}
         {% endif %}
 
         <div class="col-md-{{ card_body_col }}">
