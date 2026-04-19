@@ -78,14 +78,7 @@ layout: compress
 
     {% include js-selector.html %}
 
-    {% assign has_mermaid_diagram = page.mermaid %}
-    {% if has_mermaid_diagram != true and content contains 'language-mermaid' %}
-      {% assign has_mermaid_diagram = true %}
-    {% endif %}
-
-    {% if has_mermaid_diagram %}
-      {% include mermaid.html %}
-    {% endif %}
+    {% include mermaid.html %}
 
     {% include_cached search-loader.html %}
   </body>
