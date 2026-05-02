@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-label="AI 카드뉴스 자동화 방식 비교 구조도">
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="820" rx="26" fill="#f8fafc"/>
+  <rect x="0" y="0" width="1200" height="112" rx="26" fill="url(#header)"/>
+  <rect x="0" y="80" width="1200" height="32" fill="url(#header)"/>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, Segoe UI, sans-serif">
+    <text x="56" y="68" font-size="38" font-weight="800" fill="#ffffff">AI 카드뉴스 자동화는 두 층으로 나뉜다</text>
+    <text x="58" y="150" font-size="24" font-weight="800" fill="#0f172a">1. 생성 자동화</text>
+    <text x="58" y="186" font-size="20" fill="#475569">기획, 문구, 이미지, 레이아웃, 캡션을 만든다</text>
+    <text x="676" y="150" font-size="24" font-weight="800" fill="#0f172a">2. 발행 자동화</text>
+    <text x="676" y="186" font-size="20" fill="#475569">검수 후 Instagram에 업로드하고 결과를 기록한다</text>
+  </g>
+
+  <g stroke="#cbd5e1" stroke-width="2">
+    <line x1="600" y1="130" x2="600" y2="780"/>
+  </g>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, Segoe UI, sans-serif" font-size="19">
+    <g transform="translate(56 238)">
+      <rect width="488" height="112" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="24" y="38" font-size="24" font-weight="800" fill="#0f172a">Manus</text>
+      <text x="24" y="72" fill="#475569">한 워크스페이스에서 생성과 게시를 연결</text>
+      <text x="24" y="98" fill="#64748b">비개발자, 강의, 빠른 실습에 적합</text>
+    </g>
+    <g transform="translate(656 238)">
+      <rect width="488" height="112" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="24" y="38" font-size="24" font-weight="800" fill="#0f172a">Instagram Connector</text>
+      <text x="24" y="72" fill="#475569">Professional 계정 연결 후 게시 흐름 제공</text>
+      <text x="24" y="98" fill="#64748b">제품이 제공하는 범위 안에서 운영</text>
+    </g>
+
+    <g transform="translate(56 390)">
+      <rect width="488" height="112" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="24" y="38" font-size="24" font-weight="800" fill="#0f172a">개발자 파이프라인</text>
+      <text x="24" y="72" fill="#475569">AI 모델, 템플릿 렌더링, 저장소를 직접 조합</text>
+      <text x="24" y="98" fill="#64748b">사내 CMS, DB, 승인 프로세스와 연결 가능</text>
+    </g>
+    <g transform="translate(656 390)">
+      <rect width="488" height="112" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="24" y="38" font-size="24" font-weight="800" fill="#0f172a">Zapier / n8n / Meta API</text>
+      <text x="24" y="72" fill="#475569">media container 생성, publish, 상태 확인</text>
+      <text x="24" y="98" fill="#64748b">토큰, 권한, 실패 재시도 설계가 중요</text>
+    </g>
+
+    <g transform="translate(56 542)">
+      <rect width="488" height="112" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="24" y="38" font-size="24" font-weight="800" fill="#0f172a">Agent 방식</text>
+      <text x="24" y="72" fill="#475569">자료 조사와 디자인 도구 작업을 오가며 수행</text>
+      <text x="24" y="98" fill="#64748b">매번 다른 판단이 필요한 운영에 적합</text>
+    </g>
+    <g transform="translate(656 542)">
+      <rect width="488" height="112" rx="14" fill="#ffffff" stroke="#cbd5e1"/>
+      <text x="24" y="38" font-size="24" font-weight="800" fill="#0f172a">MCP / API / Browser</text>
+      <text x="24" y="72" fill="#475569">공식 API 우선, 브라우저 자동화는 보조 수단</text>
+      <text x="24" y="98" fill="#64748b">최종 승인과 제한 권한 설계가 필요</text>
+    </g>
+  </g>
+
+  <g stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M544 294 C584 294, 616 294, 656 294"/>
+    <path d="M544 446 C584 446, 616 446, 656 446"/>
+    <path d="M544 598 C584 598, 616 598, 656 598"/>
+  </g>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, Segoe UI, sans-serif">
+    <rect x="178" y="710" width="844" height="52" rx="26" fill="#e0f2fe" stroke="#7dd3fc"/>
+    <text x="236" y="744" font-size="21" font-weight="800" fill="#075985">핵심 질문: 완성형 제품을 쓸 것인가, 우리 조직에 맞는 시스템을 만들 것인가?</text>
+  </g>
+</svg>

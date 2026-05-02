@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="AI 카드뉴스 자동화 커버">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#101828"/>
+      <stop offset="58%" stop-color="#184e63"/>
+      <stop offset="100%" stop-color="#29524a"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#020617" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+
+  <g opacity="0.2" stroke="#e2e8f0" stroke-width="1">
+    <path d="M0 118H1200M0 238H1200M0 358H1200M0 478H1200"/>
+    <path d="M170 0V630M410 0V630M650 0V630M890 0V630M1130 0V630"/>
+  </g>
+
+  <g font-family="Pretendard, Apple SD Gothic Neo, Segoe UI, sans-serif">
+    <text x="76" y="106" font-size="22" font-weight="700" fill="#fde68a">AI CONTENT OPS</text>
+    <text x="76" y="176" font-size="60" font-weight="800" fill="#f8fafc">AI 카드뉴스 자동화,</text>
+    <text x="76" y="246" font-size="60" font-weight="800" fill="#f8fafc">Manus만 가능한가?</text>
+    <text x="80" y="308" font-size="30" fill="#d1fae5">개발자 · 에이전트 사용자 · 비개발자를 위한 3가지 접근법</text>
+  </g>
+
+  <g transform="translate(92 384)" filter="url(#shadow)" font-family="Pretendard, Apple SD Gothic Neo, Segoe UI, sans-serif">
+    <rect x="0" y="0" width="238" height="118" rx="18" fill="#f8fafc"/>
+    <text x="28" y="45" font-size="24" font-weight="800" fill="#0f172a">Manus</text>
+    <text x="28" y="82" font-size="20" fill="#475569">완성형 제품</text>
+
+    <rect x="302" y="0" width="238" height="118" rx="18" fill="#f8fafc"/>
+    <text x="330" y="45" font-size="24" font-weight="800" fill="#0f172a">Zapier / n8n</text>
+    <text x="330" y="82" font-size="20" fill="#475569">워크플로우 자동화</text>
+
+    <rect x="604" y="0" width="238" height="118" rx="18" fill="#f8fafc"/>
+    <text x="632" y="45" font-size="24" font-weight="800" fill="#0f172a">Codex + MCP</text>
+    <text x="632" y="82" font-size="20" fill="#475569">직접 도구화</text>
+
+    <rect x="906" y="0" width="238" height="118" rx="18" fill="#f8fafc"/>
+    <text x="934" y="45" font-size="24" font-weight="800" fill="#0f172a">OpenClaw</text>
+    <text x="934" y="82" font-size="20" fill="#475569">에이전트 운영</text>
+  </g>
+
+  <path d="M110 552H1090" stroke="url(#line)" stroke-width="10" stroke-linecap="round"/>
+  <g fill="#f8fafc" font-family="Pretendard, Apple SD Gothic Neo, Segoe UI, sans-serif" font-size="20">
+    <text x="80" y="590">생성 자동화</text>
+    <text x="997" y="590">발행 자동화</text>
+  </g>
+</svg>
